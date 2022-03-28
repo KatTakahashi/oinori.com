@@ -1,5 +1,11 @@
 <h1>お祈り.com</h1>
 <h2>お祈り</h2>
-  <p>ここに投稿フォーム</p>
+  <%= form_with model: @post, local: true do |f| %>
+    <%= f.label :お祈り文%><br>
+    <%= f.text_area :body %><br>
+    <%= f.submit "投稿" %><br>
+  <% end %>
 <h2>お祈り一覧</h2>
-  <p>ここに投稿一覧</p>
+  <% @posts.each do |post| %>
+    <%= post.body %>
+  <% end %>
