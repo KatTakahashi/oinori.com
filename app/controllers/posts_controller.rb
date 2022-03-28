@@ -1,11 +1,10 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
   def index
   end
-  
+
   def create
   end
-  
+
   def destroy
   end
-  
 end
