@@ -9,8 +9,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.ip = poster_ip
-    @post.save
-    redirect_to root_path
+    if @post.save
+      redirect_to request.referer
+    else
+      @post = Post.new(post_params)
+      @posts = Post.all
+      render 'top'
+    end
   end
 
   # ---------- 投稿削除機能 ----------
@@ -18,10 +23,8 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if post.ip = poster_ip
       post.destroy
-      redirect_to root_path
-    else
-      redirect_to root_path
     end
+    redirect_to request.referer
   end
 
   private
