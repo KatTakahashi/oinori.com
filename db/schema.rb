@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_03_29_061200) do
 
   create_table "lols", force: :cascade do |t|
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
