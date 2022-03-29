@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+  # ---------- トップページ ----------
+  def top
+    @post = Post.new
+    @posts = Post.all
+  end
+
   # ---------- 投稿機能 ----------
   def create
     @post = Post.new(post_params)
