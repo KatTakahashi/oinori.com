@@ -14,6 +14,9 @@ class PostsController < ApplicationController
 
   # ---------- 投稿削除機能 ----------
   def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to root_path
   end
 
   private
