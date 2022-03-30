@@ -1,0 +1,13 @@
+<h2>お祈り.com 管理者ログイン</h2>
+
+<%= form_with model: @session, local: true do |f| %>
+  <%= flash[:danger] %>
+
+  <%= f.label :namae, '名前' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password, 'パスワード' %>
+  <%= f.password_field :password %>
+
+  <%= f.submit 'ログイン' %>
+<% end %>
