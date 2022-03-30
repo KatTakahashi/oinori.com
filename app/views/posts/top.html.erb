@@ -10,5 +10,9 @@
     <%= post.body %>
     <%= link_to "face-grin-tears", post_lols_path(post.id), method: :post %>
     <%= post.lols.count %>
-    <%= link_to "削除", post_path(post.id), method: :delete %><br>
+    <!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
+    <% if logged_in? || post.ip = request.ip %>
+      <%= link_to "削除", post_path(post.id), method: :delete %>
+    <% end %>
+    <br>
   <% end %>
