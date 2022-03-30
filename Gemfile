@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 環境変数用
 gem 'dotenv-rails'
+
+#jquery用
+gem 'jquery-rails'
