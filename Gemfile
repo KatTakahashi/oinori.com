@@ -66,3 +66,6 @@ gem 'dotenv-rails'
 
 #jquery用
 gem 'jquery-rails'
+
+#Viewのアイコン用
+  gem 'font-awesome-sass'

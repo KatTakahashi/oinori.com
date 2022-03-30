@@ -1,6 +1,9 @@
 <!-- ========== 部分テンプレート：lol機能 ========== -->
 
-<%= post.lols.count %>
 <%= link_to post_lol_path(post.id), method: :post, remote: true do %>
-  <span>face-grin-tears</span>
+  <p>
+    <%= post.lols.count %>
+    あちゃ～
+    <i class="fas fa-grin-tears"></i>
+  </p>
 <% end %>
