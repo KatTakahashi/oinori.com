@@ -1,0 +1,13 @@
+<!-- ========== 部分テンプレート：each文内の共通コード ========== -->
+<%= post.body %><br>
+
+<span class = "lol_<%= post.id %>">
+  <%= render partial: "lols/lol", locals: { post: post} %>
+</span>
+
+<!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
+<% if logged_in? || post.ip = request.ip %>
+  <%= link_to "削除", post_path(post.id), method: :delete %>
+<% end %>
+<br>
+

@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   def top
     @post = Post.new
     @posts = Post.all
+    @latest_posts = @posts.order(created_at: :desc).limit(5)
+    @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').pluck(:post_id))
   end
 
   # ---------- 投稿機能 ----------

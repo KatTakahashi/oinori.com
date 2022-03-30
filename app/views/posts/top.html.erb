@@ -1,21 +1,26 @@
 <h1>お祈り.com</h1>
+<!--お祈りメッセージ投稿フォーム-->
 <h2>お祈り</h2>
   <%= form_with model: @post, local: true do |f| %>
     <%= f.label :お祈り文%><br>
     <%= f.text_area :body %><br>
     <%= f.submit "投稿" %><br>
   <% end %>
+
+<!--お祈り一覧(新着順)-->
+<h2>新しいお祈り</h2>
+  <% @latest_posts.each do |post| %>
+    <%= render partial: "posts/posts", locals: {post: post} %>
+  <% end %>
+
+<!--お祈り一覧(人気順)-->
+<h2>人気のお祈り</h2>
+  <% @popular_posts.each do |post| %>
+    <%= render partial: "posts/posts", locals: {post: post} %>
+  <% end %>
+
+<!--お祈り一覧-->
 <h2>お祈り一覧</h2>
   <% @posts.each do |post| %>
-    <%= post.body %>
-
-    <div class = "lol_<%= post.id %>">
-      <%= render partial: "lols/lol", locals: { post: post} %>
-    </div>
-
-    <!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
-    <% if logged_in? || post.ip = request.ip %>
-      <%= link_to "削除", post_path(post.id), method: :delete %>
-    <% end %>
-    <br>
+    <%= render partial: "posts/posts", locals: {post: post} %>
   <% end %>
