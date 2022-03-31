@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   # ---------- 投稿削除機能 ----------
   def destroy
     post = Post.find(params[:id])
-    if post.ip == poster_ip
+    if logged_in? || post.ip == poster_ip
       post.destroy
     end
     redirect_to request.referer
