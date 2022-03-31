@@ -29,11 +29,16 @@
 }
 
 ::placeholder {
-  color: #DDDDDD;
+  color: #BBBBBB;
 }
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+main{
+  min-height: 750px;
 }
 
 .wrapper {
@@ -59,6 +64,10 @@ textarea {
   color: red;
 }
 
+.white {
+  color: white;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -76,7 +85,7 @@ header
 section: 投稿フォーム
 -------------------------------------------*/
 .bg-img-form {
-  background-image: url(sky.jpg);
+  background-image: image-url("sky.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -110,6 +119,22 @@ section: 投稿一覧(グリッド)
   border-radius: 1.5rem;
   flex-grow: 1;
   background-color: #FFF5EE;
+}
+
+/*-------------------------------------------
+section: 管理者ログインフォーム
+-------------------------------------------*/
+.login-admin .section-title {
+  margin-top: 0;
+}
+
+#form-admin {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#form-admin tr {
+  height: 50px;
 }
 
 

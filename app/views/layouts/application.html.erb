@@ -8,13 +8,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header id="header">
+      <h1><%= link_to "お祈り.com", root_path %></h1>
+      <% if logged_in? %>
+        <p class="red">　管理者ログイン中　：　<%= link_to 'ログアウト', logout_path, method: :delete, class: "red bold" %></p>
+      <% end %>
+    </header>
 
+    <main>
+      <%= yield %>
+    </main>
 
-    <% if logged_in? %>
-      <p class="red">　管理者ログイン中　：　<%= link_to 'ログアウト', logout_path, method: :delete, class: "red bold" %></p>
-    <% end %>
-    <%= yield %>
+    <footer id="footer">
+      <p>
+        <%= link_to login_path do %>
+          &copy;
+        <% end %>
+        <span>2022 お祈り.com</span>
+      </p>
+    </footer>
   </body>
 </html>

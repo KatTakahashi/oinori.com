@@ -1,13 +1,22 @@
-<h2>お祈り.com 管理者ログイン</h2>
+<div class="bg-img-form">
+  <section class="login-admin wrapper">
+    <h2 class="section-title white">管理者ログイン</h2>
 
-<%= form_with model: @session, local: true do |f| %>
-  <%= flash[:danger] %>
-
-  <%= f.label :namae, '名前' %>
-  <%= f.text_field :name %>
-
-  <%= f.label :password, 'パスワード' %>
-  <%= f.password_field :password %>
-
-  <%= f.submit 'ログイン' %>
-<% end %>
+    <%= form_with model: @session, local: true do |f| %>
+      <%= flash[:danger] %>
+      <table id="form-admin">
+        <tr>
+          <th class="white"><%= f.label :namae, '名前' %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <th class="white"><%= f.label :password, 'パスワード' %></th>
+          <td><%= f.password_field :password %></td>
+        </tr>
+        <tr>
+          <td colspan="2"><%= f.submit 'ログイン' %></td>
+        </tr>
+      </table>
+    <% end %>
+  </section>
+</div>
