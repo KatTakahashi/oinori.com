@@ -1,24 +1,48 @@
-# README
+# お祈り.com
+[こちらからアクセス](http://54.238.27.227/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+就職活動や転職活動でのお祈りメールを共有するサイトです。<br>
 
-* Ruby version
 
-* System dependencies
+### ＜目的＞
 
-* Configuration
+就活性に励ましあえる環境を提供したく、本サイトを制作しました。<br>
+私はプログラミングスクールを卒業し、未経験からのITエンジニア転職活動中です。<br>
+私を含め、文系卒に加えて未経験からのエンジニアを目指している知り合いが<br>
+企業様からお祈りされることが多く、励まして納得のいく就活で終えたいと思いました。<br>
+<br>
+「私だけじゃないんだ」「みんなもお祈りされても頑張っているんだ」と思って頂き、<br>
+心折れるどころかみんなのお祈り文から学び反省をして自分自身の成長に繋げるきっかけとなれば幸いです。<br>
 
-* Database creation
+### ＜技術的目的＞
 
-* Database initialization
+上記目的に加え、私はITエンジニアを目指しており、<br>
+当Webアプリ制作を技術的なアウトプットの場としました。<br>
+<br>
 
-* How to run the test suite
+#### 挑戦したこと
+- Rspecによるテスト(単体/正常・異常)
+- gemを使わないログイン機能
+- 会員登録無しで投稿し、投稿者のみが削除できる機能(IPアドレスを活用)
+- 無限lol(いいね)機能
+- lol(いいね)の数によるランキング機能
+- 日本語ドメインでのデプロイ
 
-* Services (job queues, cache servers, search engines, etc.)
+### 設計書
+![er_oinori](https://user-images.githubusercontent.com/92353507/161043722-2123dc80-3396-441d-bf28-a5127807b750.PNG)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1DMuRtC2PukbXW2W_3gKG85c0emMfW7MoTK6T70ZWwQY/edit?usp=sharing)
+- [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1ZkJgliSXROmLoB-JKmI2I0Qp8RcFxx2WYflJvdzIj6w/edit?usp=sharing)
 
-* Deployment instructions
+### 開発環境
 
-* ...
+|                    |                                              |
+| :----------------: | :------------------------------------------- |
+|       **OS**       | Linux(CentOS)                                |
+|      **言語**      | HTML, CSS, Ruby 2.6.3            |
+| **フレームワーク** | Ruby on Rails 5.2.6                          |
+|  **データベース**  | MySQL 5.7(本番環境), SQLite 3.7.17(開発環境) |
+|   **Web サーバ**   | Nginx 1.20.0                                 |
+|    **インフラ**    | AWS(EC2, RDS)                                |
+|      **IDE**       | Cloud9                                       |
