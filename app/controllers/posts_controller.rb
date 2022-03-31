@@ -2,9 +2,8 @@ class PostsController < ApplicationController
   # ---------- トップページ ----------
   def top
     @post = Post.new
-    @posts = Post.all
-    @latest_posts = @posts.order(created_at: :desc).limit(5)
-    @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+    @latest_posts = Post.all.order(created_at: :desc)
+    @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   # ---------- 投稿機能 ----------

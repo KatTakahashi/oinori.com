@@ -1,26 +1,40 @@
-<h1>お祈り.com</h1>
-<!--お祈りメッセージ投稿フォーム-->
-<h2>お祈り</h2>
-  <%= form_with model: @post, local: true do |f| %>
-    <%= f.label :お祈り文%><br>
-    <%= f.text_area :body %><br>
-    <%= f.submit "投稿" %><br>
-  <% end %>
+<header id="header">
+  <h1>お祈り.com</h1>
+</header>
 
-<!--お祈り一覧(新着順)-->
-<h2>新しいお祈り</h2>
-  <% @latest_posts.each do |post| %>
-    <%= render partial: "posts/posts", locals: {post: post} %>
-  <% end %>
+<main>
+  <!--お祈りメッセージ投稿フォーム-->
+  <div class="bg-img-form">
+    <section id="form-oinori" class="wrapper">
+      <%= form_with model: @post, local: true do |f| %>
+        <%= f.text_area :body,placeholder: "　日本には400万近くの企業があるからまだ大丈夫", size: "80x5" %><br>
+        <%= f.submit "　祈りを捧げる　" %><br>
+      <% end %>
+    </section>
+  </div>
 
-<!--お祈り一覧(人気順)-->
-<h2>人気のお祈り</h2>
-  <% @popular_posts.each do |post| %>
-    <%= render partial: "posts/posts", locals: {post: post} %>
-  <% end %>
+  <!--お祈り一覧(人気順)-->
+  <section id="index-popular" class="wrapper">
+    <h2 class="section-title">人気のお祈り</h2>
+    <% @popular_posts.each do |post| %>
+      <%= render partial: "posts/posts", locals: {post: post} %>
+    <% end %>
+  </section>
 
-<!--お祈り一覧-->
-<h2>お祈り一覧</h2>
-  <% @posts.each do |post| %>
-    <%= render partial: "posts/posts", locals: {post: post} %>
-  <% end %>
+  <!--お祈り一覧(新着順)-->
+  <section id="index-latest" class="wrapper">
+    <h2 class="section-title">お祈り一覧</h2>
+    <% @latest_posts.each do |post| %>
+      <%= render partial: "posts/posts", locals: {post: post} %>
+    <% end %>
+  </section>
+</main>
+
+<footer id="footer">
+  <p>
+    <%= link_to login_path do %>
+      &copy;
+    <% end %>
+    <span>2022 お祈り.com</span>
+  </p>
+</footer>

@@ -17,3 +17,130 @@
 // font-awesome用
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+// google font用
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+::placeholder {
+  color: #DDDDDD;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 50px auto;
+  font-size: 0.9rem;
+  padding: 0 4%;
+}
+
+
+
+.section-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+textarea {
+  margin-bottom: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+#header {
+  padding: 15px 30px;
+  background-color: #FFFAFA	;
+}
+
+
+/*-------------------------------------------
+section: 投稿フォーム
+-------------------------------------------*/
+.bg-img-form {
+  background-image: url(sky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  height: 200px;
+}
+
+#form-oinori {
+  padding: 40px;
+  text-align: center;
+}
+
+/*-------------------------------------------
+section: 投稿一覧(グリッド)
+-------------------------------------------*/
+.flex-index {
+  display: flex;
+  align-items: center;
+}
+
+.flex-left {
+  width: 150px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.flex-right {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 1.5rem;
+  flex-grow: 1;
+  background-color: #FFF5EE;
+}
+
+
+/*-------------------------------------------
+buttons
+-------------------------------------------*/
+.btn-lol {
+  margin: 0 auto;
+}
+
+.btn-lol a {
+  color: #FF8C00;
+}
+
+.btn-delete{
+  margin: 15px auto 0;
+  width: 70px;
+  background-color: #FF97C2;
+  border-radius: 0.7rem;
+  text-align: center;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.btn-delete p{
+  color: #808080;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+#footer {
+  text-align: center;
+}
