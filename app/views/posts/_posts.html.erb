@@ -10,7 +10,7 @@
     <!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
     <% if logged_in? || post.ip = request.ip %>
       <div class="btn-delete">
-        <%= link_to post_path(post.id), method: :delete do %>
+        <%= link_to post_path(post.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
           <p>削除</p>
         <% end %>
       </div>
