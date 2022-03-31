@@ -169,3 +169,13 @@ footer
 #footer {
   text-align: center;
 }
+
+@media screen and (max-width: 820px){
+  textarea {
+    max-width: 80%;
+  }
+
+  main {
+    min-height: 550px;
+  }
+}
