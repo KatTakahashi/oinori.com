@@ -61,6 +61,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# デプロイ用
+group :production do
+  gem 'mysql2'
+end
+
 # 環境変数用
 gem 'dotenv-rails'
 
@@ -68,4 +73,4 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 
 #Viewのアイコン用
-  gem 'font-awesome-sass'
+gem 'font-awesome-sass'
