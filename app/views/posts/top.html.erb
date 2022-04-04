@@ -19,7 +19,7 @@
 
 <!--お祈り一覧(新着順)-->
 <section id="index-latest" class="wrapper">
-  <h2 class="section-title">お祈り一覧</h2>
+  <h2 class="section-title">お祈り一覧　<span class="small">( <%= @latest_posts.count %> 件)</span></h2>
   <% @latest_posts.each do |post| %>
     <%= render partial: "posts/posts", locals: {post: post} %>
   <% end %>
