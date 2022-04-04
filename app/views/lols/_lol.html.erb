@@ -1,5 +1,10 @@
 <!-- ========== 部分テンプレート：lol機能 ========== -->
-<%= link_to post_lol_path(post.id), method: :post, remote: true do %>
+<% if post.ip == request.ip %>
     <%= post.lols.count %>
     <i class="far fa-grin-tears"></i>
+<% else %>
+    <%= link_to post_lol_path(post.id), method: :post, remote: true do %>
+        <%= post.lols.count %>
+        <i class="far fa-grin-tears"></i>
+    <% end %>
 <% end %>
