@@ -71,6 +71,9 @@ textarea {
 .bold {
   font-weight: bold;
 }
+.x-small {
+  font-size: x-small;
+}
 
 /*-------------------------------------------
 header
@@ -150,7 +153,7 @@ buttons
 }
 
 .btn-delete{
-  margin: 15px auto 0;
+  margin: 10px auto;
   width: 70px;
   background-color: #FF97C2;
   border-radius: 0.7rem;
