@@ -14,7 +14,8 @@ class PostsController < ApplicationController
       redirect_to request.referer
     else
       @post = Post.new(post_params)
-      @posts = Post.all
+      @latest_posts = Post.all.order(created_at: :desc)
+      @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
       render 'top'
     end
   end
