@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'posts#top'
-  resources :posts, only: [:create, :destroy] do
+  resources :posts, only: [:create, :destroy, :edit, :update] do
     resource :lol, only:[:create]
   end
 

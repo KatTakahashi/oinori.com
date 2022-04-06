@@ -1,0 +1,9 @@
+<div class="bg-img-form">
+  <section id="form-oinori" class="wrapper">
+    <p class="white">個人や企業が特定できるお祈りはしないでくださいね。</p><br>
+    <%= form_with model: @post, local: true do |f| %>
+      <%= f.text_area :body,placeholder: "　日本には400万近くの企業があるからまだ大丈夫", size: "80x5" %><br>
+      <%= f.submit "　祈りを捧げる　" %><br>
+    <% end %>
+  </section>
+</div>

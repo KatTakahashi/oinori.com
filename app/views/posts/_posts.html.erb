@@ -14,7 +14,7 @@
       <% elsif post.score == -0.6 || post.score == -0.5 %>
         90%
       <% elsif post.score == -0.4 %>
-        80%  
+        80%
       <% elsif post.score == -0.3  %>
         70%
       <% elsif post.score == -0.2 %>
@@ -43,14 +43,20 @@
           <p>削除</p>
         <% end %>
       </div>
+
       <div class="x-small">
         <%= post.ip %>
-      </div>
+      </div
+
     <% elsif post.ip == request.ip %>
       <div class="btn-delete">
         <%= link_to post_path(post.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
           <p>削除</p>
         <% end %>
+      </div>
+
+      <div>
+        <%= link_to "編集", edit_post_path(post) %>
       </div>
     <% end %>
   </div>
