@@ -6,6 +6,34 @@
       <%= render partial: "lols/lol", locals: { post: post} %>
     </div>
 
+    <!-- ---------- 感情スコア ---------- -->
+    <div class="sentiment-score">
+      <span>辛辣度：</span>
+      <% if post.score == -0.9 || post.score == -0.8 || post.score == -0.7 %>
+        100%
+      <% elsif post.score == -0.6 || post.score == -0.5 %>
+        90%
+      <% elsif post.score == -0.4 %>
+        80%  
+      <% elsif post.score == -0.3  %>
+        70%
+      <% elsif post.score == -0.2 %>
+        60%
+      <% elsif post.score == -0.1 %>
+        50%
+      <% elsif post.score == 0.0 %>
+        40%
+      <% elsif post.score == 0.1 %>
+        30%
+      <% elsif post.score == 0.2 %>
+        20%
+      <% elsif post.score == 0.3 %>
+        10%
+      <% else %>
+        0%
+      <% end %>
+    </div>
+
     <!-- ---------- 削除ボタン ---------- -->
     <!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
 
