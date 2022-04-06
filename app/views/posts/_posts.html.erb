@@ -46,17 +46,17 @@
 
       <div class="x-small">
         <%= post.ip %>
-      </div
+      </div>
+
+      <div>
+        <%= link_to "編集", edit_post_path(post) %>
+      </div>
 
     <% elsif post.ip == request.ip %>
       <div class="btn-delete">
         <%= link_to post_path(post.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
           <p>削除</p>
         <% end %>
-      </div>
-
-      <div>
-        <%= link_to "編集", edit_post_path(post) %>
       </div>
     <% end %>
   </div>
