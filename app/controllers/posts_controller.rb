@@ -62,8 +62,10 @@ class PostsController < ApplicationController
       @posts = posts_all.order(created_at: :desc)
     elsif params[:old]
       @posts = posts_all.order(created_at: :asc)
-    elsif params[:lol_count]
+    elsif params[:lol]
       @posts = posts_all.find(Lol.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+    elsif params[:critical]
+      @posts = posts_all.order(score: :asc)
     else
       @posts = posts_all.order(created_at: :desc)
     end
