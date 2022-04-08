@@ -12,9 +12,11 @@
 <!--お祈り一覧(新着順)-->
 <section id="index-latest" class="wrapper">
   <h2 class="section-title">お祈り一覧　<span class="small">( <%= @posts.count %> 件)</span></h2>
-  <%= link_to '新しい順', root_path(latest: "true") %>
-  <%= link_to '古い順', root_path(old: "true") %>
-  <%= link_to '人気順', root_path(lol_count: "true")%>
+  <div class = "section-sort">
+    <%= link_to '新しい順', root_path(latest: "true"), class: "blue" %><span>　|　</span>
+    <%= link_to '古い順', root_path(old: "true"), class: "blue" %><span>　|　</span>
+    <%= link_to '人気順', root_path(lol_count: "true"), class: "blue" %>
+  </div>
   <% @posts.each do |post| %>
     <%= render partial: "posts/posts", locals: {post: post} %>
   <% end %>
