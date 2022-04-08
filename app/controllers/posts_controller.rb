@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   def posts_all
     Post.preload(:lols)
   end
-  
+
   # ソート用投稿一覧
   def posts_sort
     if params[:latest]
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
     elsif params[:lol_count]
       @posts = posts_all.find(Lol.group(:post_id).order('count(post_id) desc').pluck(:post_id))
     else
-      @posts = posts_all
+      @posts = posts_all.order(created_at: :desc)
     end
   end
 end
