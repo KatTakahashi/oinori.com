@@ -9,18 +9,13 @@
   </section>
 </div>
 
-<!--お祈り一覧(人気順)-->
-<!--<section id="index-popular" class="wrapper">-->
-<!--  <h2 class="section-title">人気のお祈り</h2>-->
-<!--  </% @popular_posts.each do |post| %>-->
-<!--    </%= render partial: "posts/posts", locals: {post: post} %>-->
-<!--  </% end %>-->
-<!--</section>-->
-
 <!--お祈り一覧(新着順)-->
 <section id="index-latest" class="wrapper">
-  <h2 class="section-title">お祈り一覧　<span class="small">( <%= @latest_posts.count %> 件)</span></h2>
-  <% @latest_posts.each do |post| %>
+  <h2 class="section-title">お祈り一覧　<span class="small">( <%= @posts.count %> 件)</span></h2>
+  <%= link_to '新しい順', root_path(latest: "true") %>
+  <%= link_to '古い順', root_path(old: "true") %>
+  <%= link_to '人気順', root_path(lol_count: "true")%>
+  <% @posts.each do |post| %>
     <%= render partial: "posts/posts", locals: {post: post} %>
   <% end %>
 </section>

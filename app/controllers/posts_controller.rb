@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   # ---------- トップページ ----------
   def top
     @post = Post.new
-    @latest_posts = Post.preload(:lols).order(created_at: :desc)
-    @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    posts_sort
   end
 
   # ---------- 投稿機能 ----------
@@ -15,8 +14,7 @@ class PostsController < ApplicationController
       redirect_to request.referer
     else
       @post = Post.new(post_params)
-      @latest_posts = Post.all.order(created_at: :desc)
-      @popular_posts = Post.find(Lol.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+      posts_sort
       render 'top'
     end
   end
@@ -51,5 +49,23 @@ class PostsController < ApplicationController
   # 投稿者のIPアドレス取得
   def poster_ip
     request.ip
+  end
+
+  # 全投稿取得(N+1対策済み)
+  def posts_all
+    Post.preload(:lols)
+  end
+  
+  # ソート用投稿一覧
+  def posts_sort
+    if params[:latest]
+      @posts = posts_all.order(created_at: :desc)
+    elsif params[:old]
+      @posts = posts_all.order(created_at: :asc)
+    elsif params[:lol_count]
+      @posts = posts_all.find(Lol.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+    else
+      @posts = posts_all
+    end
   end
 end
