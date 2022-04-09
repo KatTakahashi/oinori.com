@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # ---------- トップページ ----------
   def top
     @post = Post.new
-    posts_sort
+    posts_all_with_sort
   end
 
   # ---------- 投稿機能 ----------
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       redirect_to request.referer
     else
       @post = Post.new(post_params)
-      posts_sort
+      posts_all_with_sort
       render 'top'
     end
   end
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   end
 
   # ソート用投稿一覧
-  def posts_sort
+  def posts_all_with_sort
     if params[:latest]
       @posts = posts_all.order(created_at: :desc)
     elsif params[:old]
