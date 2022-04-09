@@ -4,16 +4,20 @@
     <title>OinoriCom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <!--レスポンシブデザイン用-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <header id="header">
       <h1><%= link_to "お祈り.com", root_path %></h1>
+      <ul id="navbar">
+        <li><%= link_to "お祈り", root_path %></li>
+        <li><%= link_to "逆質問", asks_path %></li>
+      </ul>
       <% if logged_in? %>
         <p class="red">　管理者ログイン中　：　<%= link_to 'ログアウト', logout_path, method: :delete, class: "red bold" %></p>
       <% end %>
