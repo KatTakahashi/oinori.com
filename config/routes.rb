@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :asks, only: [:index, :create, :destroy] do
-    resource :lol, only:[:create]
+    resource :good, only:[:create]
   end
 
   # Admin ログイン/ログアウト機能

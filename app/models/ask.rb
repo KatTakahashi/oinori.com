@@ -3,7 +3,7 @@ class Ask < ApplicationRecord
   before_save :trim
 
   # --------------- アソシエーション ---------------
-  has_many :lols, dependent: :destroy
+  has_many :goods, dependent: :destroy
 
   # --------------- バリデーション ---------------
   validates :body, presence: true

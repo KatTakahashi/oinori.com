@@ -1,0 +1,10 @@
+<!-- ========== 部分テンプレート：lol機能 ========== -->
+<!--</% if ask.ip == request.ip %>-->
+    <!--</%= ask.lols.size %>-->
+    <!--<i class="far fa-grin-tears"></i>-->
+<!--</% else %>-->
+    <%= link_to ask_good_path(ask.id), method: :post, remote: true do %>
+      <%= ask.goods.size %>
+      <i class="far fa-laugh-squint"></i>
+    <% end %>
+<!--</% end %>-->

@@ -2,8 +2,8 @@
 <div class = "flex-index">
   <div class="flex-left">
     <!-- ---------- lolボタン ---------- -->
-    <div class = "lol_<%= ask.id %> btn-lol">
-      <%= render partial: "lols/lol", locals: { post: ask} %>
+    <div class = "ask_<%= ask.id %> btn-lol">
+      <%= render partial: "goods/good", locals: { ask: ask} %>
     </div>
 
     <!-- ---------- 削除ボタン ---------- -->
