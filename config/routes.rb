@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :lol, only:[:create]
   end
 
-  resources :asks, only: [:create, :destroy] do
+  resources :asks, only: [:index, :create, :destroy] do
     resource :lol, only:[:create]
   end
 
