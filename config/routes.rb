@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resource :lol, only:[:create]
   end
 
+  resources :asks, only: [:create, :destroy] do
+    resource :lol, only:[:create]
+  end
+
   # Admin ログイン/ログアウト機能
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
