@@ -50,8 +50,8 @@ class AsksController < ApplicationController
       @asks = asks_all.order(created_at: :desc)
     elsif params[:old]
       @asks = asks_all.order(created_at: :asc)
-    elsif params[:lol]
-      @asks = asks_all.find(Lol.group(:ask_id).order('count(ask_id) desc').pluck(:ask_id))
+    elsif params[:good]
+      @asks = asks_all.find(Good.group(:ask_id).order('count(ask_id) desc').pluck(:ask_id))
     else
       @asks = asks_all.order(created_at: :desc)
     end
