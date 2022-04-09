@@ -7,12 +7,12 @@ class AsksController < ApplicationController
 
   # ---------- 投稿機能 ----------
   def create
-    @ask = Ask.new(post_params)
+    @ask = Ask.new(ask_params)
     @ask.ip = poster_ip
     if @ask.save
       redirect_to request.referer
     else
-      @ask = Ask.new(post_params)
+      @ask = Ask.new(ask_params)
       @asks = Ask.all
       render 'index'
     end

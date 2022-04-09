@@ -2,7 +2,7 @@
 <div class = "flex-index">
   <div class="flex-left">
     <!-- ---------- lolボタン ---------- -->
-    <div class = "lol_<%= post.id %> btn-lol">
+    <div class = "lol_<%= ask.id %> btn-lol">
       <%= render partial: "lols/lol", locals: { post: ask} %>
     </div>
 
@@ -24,7 +24,7 @@
         <!--</%= link_to "編集", edit_post_path(post) %>-->
       <!--</div>-->
 
-    <% elsif aks.ip == request.ip %>
+    <% elsif ask.ip == request.ip %>
       <div class="btn-delete">
         <%= link_to ask_path(ask.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
           <p>削除</p>
