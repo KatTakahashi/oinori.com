@@ -13,10 +13,9 @@
 <section id="index-latest" class="wrapper">
   <h2 class="section-title">逆質問一覧　<span class="small">( <%= @asks.count %> 件)</span></h2>
   <div class = "section-sort">
-    <!--</%= link_to '新しい順', root_path(latest: "true"), class: "blue" %><span>　|　</span>-->
-    <!--</%= link_to '古い順', root_path(old: "true"), class: "blue" %><span>　|　</span>-->
-    <!--</%= link_to '人気順', root_path(lol: "true"), class: "blue" %><span>　|　</span>-->
-    <!--</%= link_to '辛辣順', root_path(critical: "true"), class: "blue" %>-->
+    <%= link_to '新しい順', asks_path(latest: "true"), class: "blue" %><span>　|　</span>
+    <%= link_to '古い順', asks_path(old: "true"), class: "blue" %><span>　|　</span>
+    <%= link_to '人気順', asks_path(good: "true"), class: "blue" %><span>　|　</span>
   </div>
   <% @asks.each do |ask| %>
     <%= render partial: "asks/asks", locals: {ask: ask} %>

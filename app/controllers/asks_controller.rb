@@ -2,7 +2,7 @@ class AsksController < ApplicationController
   # ---------- 逆質問一覧ページ ----------
   def index
     @ask = Ask.new
-    @asks = Ask.all
+    asks_all_with_sort
   end
 
   # ---------- 投稿機能 ----------
@@ -13,7 +13,7 @@ class AsksController < ApplicationController
       redirect_to request.referer
     else
       @ask = Ask.new(ask_params)
-      @asks = Ask.all
+      asks_all_with_sort
       render 'index'
     end
   end
@@ -36,5 +36,23 @@ class AsksController < ApplicationController
   # 投稿者のIPアドレス取得
   def poster_ip
     request.ip
+  end
+
+  # 全投稿取得(N+1対策済み)
+  def asks_all
+    Ask.preload(:goods)
+  end
+
+  # ソート用投稿一覧
+  def asks_all_with_sort
+    if params[:latest]
+      @asks = asks_all.order(created_at: :desc)
+    elsif params[:old]
+      @asks = asks_all.order(created_at: :asc)
+    elsif params[:lol]
+      @asks = asks_all.find(Lol.group(:ask_id).order('count(ask_id) desc').pluck(:ask_id))
+    else
+      @asks = asks_all.order(created_at: :desc)
+    end
   end
 end
