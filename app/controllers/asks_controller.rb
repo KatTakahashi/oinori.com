@@ -3,6 +3,7 @@ class AsksController < ApplicationController
   def index
     @ask = Ask.new
     asks_all_with_sort
+    Visiter.create(ip: request.ip)
   end
 
   # ---------- 投稿機能 ----------

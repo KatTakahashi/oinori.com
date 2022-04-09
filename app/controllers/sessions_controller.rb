@@ -1,8 +1,9 @@
 class SessionsController < ApplicationController
-  
+
   before_action :require_login, only: [:destroy]
 
   def new
+    @visiters = Visiter.all
   end
 
   def create
@@ -20,5 +21,5 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_path
   end
-  
+
 end

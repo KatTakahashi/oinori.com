@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_093953) do
+ActiveRecord::Schema.define(version: 2022_04_09_121537) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 2022_04_09_093953) do
     t.datetime "updated_at", null: false
     t.string "ip"
     t.decimal "score", precision: 5, scale: 3
+  end
+
+  create_table "visiters", force: :cascade do |t|
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def top
     @post = Post.new
     posts_all_with_sort
+    Visiter.create(ip: request.ip)
   end
 
   # ---------- 投稿機能 ----------
