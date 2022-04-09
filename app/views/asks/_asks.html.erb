@@ -1,0 +1,41 @@
+<!-- ========== 部分テンプレート：each文内の共通コード ========== -->
+<div class = "flex-index">
+  <div class="flex-left">
+    <!-- ---------- lolボタン ---------- -->
+    <div class = "lol_<%= post.id %> btn-lol">
+      <%= render partial: "lols/lol", locals: { post: ask} %>
+    </div>
+
+    <!-- ---------- 削除ボタン ---------- -->
+    <!--条件：管理者ログイン中 or 投稿者(IPアドレスで判断)-->
+
+    <% if logged_in? %>
+      <div class="btn-delete">
+        <%= link_to ask_path(ask.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
+          <p>削除</p>
+        <% end %>
+      </div>
+
+      <div class="x-small">
+        <%= ask.ip %>
+      </div>
+
+      <!--<div>-->
+        <!--</%= link_to "編集", edit_post_path(post) %>-->
+      <!--</div>-->
+
+    <% elsif aks.ip == request.ip %>
+      <div class="btn-delete">
+        <%= link_to ask_path(ask.id), method: :delete, data: {confirm: "本当に削除しますか"} do %>
+          <p>削除</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- ---------- 投稿文 ---------- -->
+  <div class = "flex-right">
+    <%= ask.body %>
+  </div>
+</div>
+
