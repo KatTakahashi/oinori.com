@@ -29,5 +29,7 @@ class SessionsController < ApplicationController
     @visiters_ip = Visiter.distinct.pluck(:ip)
     # 本日のアクセス数
     @visiters_today =@visiters.where(created_at: Time.zone.now.all_day)
+    # 本日の利用人数
+    @visiters_today_ip = Visiter.where(created_at: Time.zone.now.all_day).distinct.pluck(:ip)
   end
 end
