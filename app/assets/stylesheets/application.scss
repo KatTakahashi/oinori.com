@@ -155,6 +155,17 @@ section: 管理者ログインフォーム
   height: 50px;
 }
 
+#table-visiters {
+  margin: 0 auto;
+}
+#table-visiters td {
+  padding: 5px;
+}
+
+#table-visiters .right {
+  text-align: right;
+}
+
 /*-------------------------------------------
 文字の色
 -------------------------------------------*/

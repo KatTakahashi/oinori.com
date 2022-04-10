@@ -19,28 +19,31 @@
       </table>
     <% end %>
   </section>
-  <section class="wrapper">
-    <table id="table-visiters">
-      <tr>
-        <th>Total：</th>
-        <td><%= @visiters.count %></td>
-        <td>アクセス</td>
-      </tr>
-      <tr>
-        <th>Total：</th>
-        <td><%= @visiters_ip.count %></td>
-        <td>名の利用</td>
-      </tr>
-      <tr>
-        <th>本日：</th>
-        <td><%= @visiters_today.count %></td>
-        <td>アクセス</td>
-      </tr>
-      <tr>
-        <th>本日：</th>
-        <td><%= @visiters_today_ip.count %></td>
-        <td>名の利用</td>
-      </tr>
-    </table>
+  <% if logged_in? %>
+    <section class="wrapper">
+      <h2 class="section-title">サイト利用者数</span></h2>
+      <table id="table-visiters">
+        <tr>
+          <th class="right">Total：</th>
+          <td class="right"><%= @visiters.count %></td>
+          <td>アクセス</td>
+        </tr>
+        <tr>
+          <th class="right">Total：</th>
+          <td class="right"><%= @visiters_ip.count %></td>
+          <td>名の利用</td>
+        </tr>
+        <tr>
+          <th class="right">本日：</th>
+          <td class="right"><%= @visiters_today.count %></td>
+          <td>アクセス</td>
+        </tr>
+        <tr>
+          <th class="right">本日：</th>
+          <td class="right"><%= @visiters_today_ip.count %></td>
+          <td>名の利用</td>
+        </tr>
+      </table>
+    <% end %>
   </section>
 </div>
