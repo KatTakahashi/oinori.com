@@ -20,6 +20,17 @@
     <% end %>
   </section>
   <section class="wrapper">
-    <%= @visiters.count %>　アクセス
+    <table id="table-visiters">
+      <tr>
+        <th>Total：</th>
+        <td><%= @visiters.count %></td>
+        <td>アクセス</td>
+      </tr>
+      <tr>
+        <th>Total：</th>
+        <td><%= @visiters_ip.count %></td>
+        <td>名の利用</td>
+      </tr>
+    </table>
   </section>
 </div>

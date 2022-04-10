@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   before_action :require_login, only: [:destroy]
 
   def new
-    @visiters = Visiter.all
+    visiters
   end
 
   def create
@@ -22,4 +22,10 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def visiters
+    # トータルのアクセス数
+    @visiters = Visiter.all
+    # トータルの利用人数
+    @visiters_ip = Visiter.distinct.pluck(:ip)
+  end
 end
