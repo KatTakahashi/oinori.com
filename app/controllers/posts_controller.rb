@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @post.ip = poster_ip
     @post.score = Language.get_data(post_params[:body])
     if @post.save
+      Lol.create(post_id: @post.id)
       redirect_to request.referer
     else
       @post = Post.new(post_params)

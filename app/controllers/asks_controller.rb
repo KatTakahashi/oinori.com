@@ -11,6 +11,7 @@ class AsksController < ApplicationController
     @ask = Ask.new(ask_params)
     @ask.ip = poster_ip
     if @ask.save
+      Good.create(ask_id: @ask.id)
       redirect_to request.referer
     else
       @ask = Ask.new(ask_params)
