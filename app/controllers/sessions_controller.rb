@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     admin = Admin.find_by(name: params[:name].downcase)
     if admin && admin.authenticate(params[:password])
       log_in(admin)
-      redirect_to root_path
+      redirect_to login_path
     else
       flash.now[:danger] = '名前かパスワードが間違っています。'
       render 'new'
