@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def new
     visiters
+    latest_post
   end
 
   def create

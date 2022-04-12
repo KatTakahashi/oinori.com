@@ -36,11 +36,6 @@ class AsksController < ApplicationController
     params.require(:ask).permit(:body)
   end
 
-  # 投稿者のIPアドレス取得
-  def poster_ip
-    request.ip
-  end
-
   # 全投稿取得(N+1対策済み)
   def asks_all
     Ask.preload(:goods)
@@ -57,10 +52,5 @@ class AsksController < ApplicationController
     else
       @asks = asks_all.order(created_at: :desc)
     end
-  end
-
-  def latest_post
-    @latest_post = Post.preload(:lols).order(created_at: :desc).first
-    @latest_ask = Ask.preload(:goods).order(created_at: :desc).first
   end
 end
