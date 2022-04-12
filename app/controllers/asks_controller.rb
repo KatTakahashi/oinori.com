@@ -61,5 +61,6 @@ class AsksController < ApplicationController
 
   def latest_post
     @latest_post = Post.preload(:lols).order(created_at: :desc).first
+    @latest_ask = Ask.preload(:goods).order(created_at: :desc).first
   end
 end
