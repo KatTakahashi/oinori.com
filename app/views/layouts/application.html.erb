@@ -15,7 +15,14 @@
     <header id="header">
       <h1><%= link_to "お祈り.com", root_path %></h1>
       <ul id="navbar">
-        <li><%= link_to "お祈り", root_path %></li>
+        <li>
+          <%= link_to root_path do%>
+            <span>お祈り</span>
+            <% if @latest_post.created_at + 3.day > Date.today %>
+              <i class="fas fa-star new-info">New<span class="normal">(3日以内)</span></i>
+            <% end %>
+          <% end %>
+            </li>
         <li><%= link_to "逆質問", asks_path %></li>
       </ul>
       <% if logged_in? %>

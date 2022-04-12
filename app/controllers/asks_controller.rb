@@ -2,6 +2,7 @@ class AsksController < ApplicationController
   # ---------- 逆質問一覧ページ ----------
   def index
     @ask = Ask.new
+    latest_post
     asks_all_with_sort
     Visiter.create(ip: request.ip)
   end
@@ -56,5 +57,9 @@ class AsksController < ApplicationController
     else
       @asks = asks_all.order(created_at: :desc)
     end
+  end
+
+  def latest_post
+    @latest_post = Post.preload(:lols).order(created_at: :desc).first
   end
 end

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   # ---------- トップページ ----------
   def top
     @post = Post.new
+    latest_post
     posts_all_with_sort
     Visiter.create(ip: request.ip)
   end
@@ -71,5 +72,9 @@ class PostsController < ApplicationController
     else
       @posts = posts_all.order(created_at: :desc)
     end
+  end
+
+  def latest_post
+    @latest_post = Post.preload(:lols).order(created_at: :desc).first
   end
 end
