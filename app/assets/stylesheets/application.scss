@@ -144,8 +144,16 @@ section: 投稿一覧
   padding: 15px;
   border-radius: 1.5rem;
   flex-grow: 1;
+}
+
+.index-post {
   background-color: #FFF5EE;
 }
+
+.index-ask {
+  background-color: #CEF9DC;
+}
+
 
 /*-------------------------------------------
 section: 管理者ログインフォーム
