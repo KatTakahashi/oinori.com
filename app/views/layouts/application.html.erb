@@ -18,16 +18,16 @@
         <li>
           <%= link_to root_path do %>
             <span>お祈り</span>
-            <% if @latest_post.created_at + 3.day > Date.today %>
-              <i class="fas fa-star new-info">New<span class="normal">(3日以内)</span></i>
+            <% if @latest_post.created_at + 1.day > Date.today %>
+              <i class="fas fa-star new-info">New<span class="normal">(24時間以内)</span></i>
             <% end %>
           <% end %>
         </li>
         <li>
           <%= link_to asks_path do %>
             <span>逆質問</span>
-            <% if @latest_ask.created_at + 3.day > Date.today %>
-              <i class="fas fa-star new-info">New<span class="normal">(3日以内)</span></i>
+            <% if @latest_ask.created_at + 1.day > Date.today %>
+              <i class="fas fa-star new-info">New<span class="normal">(24時間以内)</span></i>
             <% end %>
           <% end %>
         </li>
