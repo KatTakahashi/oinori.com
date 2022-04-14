@@ -24,9 +24,12 @@
 #### 挑戦したこと
 - Rspecによるテスト(単体/正常・異常)
 - gemを使わないログイン機能
+- Google Natural Language API を活用した辛辣度(AI)機能
 - 会員登録無しで投稿し、投稿者のみが削除できる機能(IPアドレスを活用)
-- 無限lol(いいね)機能
-- lol(いいね)の数によるランキング機能
+- 無限lol/good(いいね)機能
+- lol/good(いいね)の数による並び替え機能
+- 24時間以内に投稿があった際のnotice機能
+- アクセス数管理機能
 
 ### 設計書
 ![er_oinori](https://user-images.githubusercontent.com/92353507/161043722-2123dc80-3396-441d-bf28-a5127807b750.PNG)
