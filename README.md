@@ -32,7 +32,7 @@
 - アクセス数管理機能
 
 ### 設計書
-![er_oinori](https://user-images.githubusercontent.com/92353507/161043722-2123dc80-3396-441d-bf28-a5127807b750.PNG)
+![er_oinori](https://user-images.githubusercontent.com/92353507/163299089-5d769e32-d233-4ba9-a79f-f2eb4f2095ed.png)
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/1DMuRtC2PukbXW2W_3gKG85c0emMfW7MoTK6T70ZWwQY/edit?usp=sharing)
 - [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1ZkJgliSXROmLoB-JKmI2I0Qp8RcFxx2WYflJvdzIj6w/edit?usp=sharing)
 
