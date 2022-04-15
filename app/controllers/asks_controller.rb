@@ -4,7 +4,7 @@ class AsksController < ApplicationController
     @ask = Ask.new
     latest_post
     asks_all_with_sort
-    Visiter.create(ip: request.ip)
+    visiters
   end
 
   # ---------- 投稿機能 ----------

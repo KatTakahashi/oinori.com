@@ -32,6 +32,19 @@
           <% end %>
         </li>
       </ul>
+<div class="visiters">
+  <table class="table-visiters x-small gray">
+      <th class="right">Total：</th>
+      <td class="right"><%= @visiters_ip.count %></td>
+      <td>名の利用</td>
+    </tr>
+    <tr>
+      <th class="right">Today：</th>
+      <td class="right"><%= @visiters_today_ip.count %></td>
+      <td>名の利用</td>
+    </tr>
+  </table>
+</div>
       <% if logged_in? %>
         <p class="red">　管理者ログイン中　：　<%= link_to 'ログアウト', logout_path, method: :delete, class: "red bold" %></p>
       <% end %>

@@ -171,14 +171,23 @@ section: 管理者ログインフォーム
   height: 50px;
 }
 
-#table-visiters {
-  margin: 0 auto;
+.visiters {
+  display: flex;
 }
-#table-visiters td {
+
+.table-visiters {
+  margin-left: 100px;
+}
+
+.table-visiters th, .table-visiters td {
+  line-height: 3px;
+}
+
+.table-visiters td {
   padding: 5px;
 }
 
-#table-visiters .right {
+.table-visiters .right {
   text-align: right;
 }
 
@@ -191,6 +200,10 @@ section: 管理者ログインフォーム
 
 .white {
   color: white;
+}
+
+.gray {
+  color: #A9A9A9;
 }
 
 .blue {

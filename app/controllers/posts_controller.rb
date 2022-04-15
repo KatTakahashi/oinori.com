@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @post = Post.new
     latest_post
     posts_all_with_sort
-    Visiter.create(ip: request.ip)
+    visiters
   end
 
   # ---------- 投稿機能 ----------
