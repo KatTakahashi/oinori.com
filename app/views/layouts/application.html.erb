@@ -12,6 +12,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <div class="visiters x-small gray">
+          <p>Today：<%= @visiters_today_ip.count %>　名の利用</p>
+    </div>
     <header id="header">
       <h1><%= link_to "お祈り.com", root_path %></h1>
       <ul id="navbar">
@@ -32,19 +35,6 @@
           <% end %>
         </li>
       </ul>
-<div class="visiters">
-  <table class="table-visiters x-small gray">
-      <th class="right">Total：</th>
-      <td class="right"><%= @visiters_ip.count %></td>
-      <td>名の利用</td>
-    </tr>
-    <tr>
-      <th class="right">Today：</th>
-      <td class="right"><%= @visiters_today_ip.count %></td>
-      <td>名の利用</td>
-    </tr>
-  </table>
-</div>
       <% if logged_in? %>
         <p class="red">　管理者ログイン中　：　<%= link_to 'ログアウト', logout_path, method: :delete, class: "red bold" %></p>
       <% end %>
