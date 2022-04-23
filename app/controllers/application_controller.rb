@@ -25,4 +25,20 @@ class ApplicationController < ActionController::Base
     # 本日の利用人数
     @visiters_today_ip = Visiter.where(created_at: Time.zone.now.all_day).distinct.pluck(:ip)
   end
+
+  # 全投稿取得(N+1対策済み)
+  def asks_all
+    Ask.preload(:goods)
+  end
+
+  # 全投稿取得(N+1対策済み)
+  def posts_all
+    Post.preload(:lols)
+  end
+
+  # カウントダウン(30日更新が無ければサイト閉鎖)
+  def countdown
+    @cd_post = posts_all.order(created_at: :desc).first
+    @cd_ask =asks_all.order(created_at: :desc).first
+  end
 end

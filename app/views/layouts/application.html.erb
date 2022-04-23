@@ -13,8 +13,13 @@
   </head>
   <body>
     <div class="visiters x-small gray">
-          <p>Today：　<%= @visiters_today_ip.count %>　名の利用</p>
-          <p>※当サイトは30日間、投稿が無ければ封鎖します</p>
+      <p>Today：　<%= @visiters_today_ip.count %>　名の利用</p>
+      <p>※当サイトは30日間、投稿が無ければ封鎖します</p>
+      <% if @cd_post.created_at > @cd_ask.created_at %>
+        最終更新日：<%= @cd_post.created_at.strftime('%Y年%m月%d日') %>
+      <% else %>
+        最終更新日：<%= @cd_ask.created_at.strftime('%Y年%m月%d日') %>
+      <% end %>
     </div>
     <header id="header">
       <h1><%= link_to "お祈り.com", root_path %></h1>

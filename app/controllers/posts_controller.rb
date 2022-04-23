@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   # ---------- トップページ ----------
   def top
+    countdown
     @post = Post.new
     latest_post
     posts_all_with_sort
@@ -47,11 +48,6 @@ class PostsController < ApplicationController
   # --------------- ストロングパラメータ --------------
   def post_params
     params.require(:post).permit(:body)
-  end
-
-  # 全投稿取得(N+1対策済み)
-  def posts_all
-    Post.preload(:lols)
   end
 
   # ソート用投稿一覧

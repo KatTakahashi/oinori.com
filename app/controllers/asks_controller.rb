@@ -1,6 +1,7 @@
 class AsksController < ApplicationController
   # ---------- 逆質問一覧ページ ----------
   def index
+    countdown
     @ask = Ask.new
     latest_post
     asks_all_with_sort
@@ -34,11 +35,6 @@ class AsksController < ApplicationController
   # --------------- ストロングパラメータ --------------
   def ask_params
     params.require(:ask).permit(:body)
-  end
-
-  # 全投稿取得(N+1対策済み)
-  def asks_all
-    Ask.preload(:goods)
   end
 
   # ソート用投稿一覧
